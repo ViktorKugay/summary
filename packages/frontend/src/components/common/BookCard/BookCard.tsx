@@ -3,7 +3,7 @@ import cn from 'classnames';
 import {Text} from '../../ui/Text/Text';
 import {Link} from 'react-router-dom';
 import InfoIcon from '@material-ui/icons/Info';
-import anime from 'animejs/lib/anime.es.js';
+import anime from 'animejs/lib/anime.js';
 
 import s from './BookCard.css';
 

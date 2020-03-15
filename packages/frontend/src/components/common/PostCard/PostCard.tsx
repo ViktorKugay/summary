@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import cn from 'classnames';
 import {Text} from '../../ui/Text/Text';
-import anime from 'animejs/lib/anime.es.js';
+import anime from 'animejs/lib/anime.js';
 
 import s from './PostCard.css';
 

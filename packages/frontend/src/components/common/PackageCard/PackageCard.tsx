@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import {Text} from '../../ui/Text/Text';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import anime from 'animejs/lib/anime.es.js';
+import anime from 'animejs/lib/anime.js';
 
 import s from './PackageCard.css';
 
@@ -15,7 +15,6 @@ export const PackageCard: React.FC<Props> = ({title, description, color}) => {
   const container = useRef();
 
   const handleOver = () => {
-    console.log('!!!!');
     anime({
       targets: container.current,
       scale: 1.03,

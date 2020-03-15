@@ -13,4 +13,5 @@ module.exports = {
     '^(?!.*\\.(js|jsx|mjs|css|json)$)': require.resolve('./tests/fileTransform'),
   },
   moduleFileExtensions: ['web.js', 'js', 'json', 'web.jsx', 'jsx', 'node', 'mjs', 'ts', 'tsx'],
+  setupFiles: ['<rootDir>/tests/matchMedia.js'],
 };
