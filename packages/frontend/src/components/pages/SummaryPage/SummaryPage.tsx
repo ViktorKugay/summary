@@ -22,11 +22,11 @@ export const SummaryPage: React.FC = () => {
     <div className={s.root}>
       <div className={s.header}>
         <img src={avatar} className={s.avatar} />
-        <div className={s.header_title}>
-          <Text color="white" mod="h1" weight="500" className={s.header_name}>
+        <div>
+          <Text color="white" mod="h1" weight="500">
             {resources.MainPage.header.name}
           </Text>
-          <Text color="white" mod="h4" weight="200" className={s.header_description}>
+          <Text color="white" mod="h4" weight="200">
             {resources.MainPage.header.description}
           </Text>
         </div>
@@ -47,8 +47,8 @@ export const SummaryPage: React.FC = () => {
                 <Text mod="h4" weight="500" className={s.experience_date}>
                   {date}
                 </Text>
-                <div className={s.experience_description}>
-                  <Text mod="h4" weight="600" className={s.experience_name}>
+                <div>
+                  <Text mod="h4" weight="600">
                     {name}
                   </Text>
                   <ul className={s.experience_features}>
@@ -72,8 +72,8 @@ export const SummaryPage: React.FC = () => {
                 <Text mod="h4" weight="500" className={s.education_date}>
                   {date}
                 </Text>
-                <div className={s.education_container}>
-                  <Text mod="h4" weight="600" className={s.experience_name}>
+                <div>
+                  <Text mod="h4" weight="600">
                     {name}
                   </Text>
                   <ul className={s.education_features}>
@@ -94,31 +94,31 @@ export const SummaryPage: React.FC = () => {
               {resources.MainPage.sidebar.title}
             </Text>
             <Divider margin="12" />
-            <Text mod="h4" weight="600" color="main" className={cn(s.sidebar_address)}>
+            <Text mod="h4" weight="600" color="main">
               {'Адрес'}
             </Text>
             <CopyToClipboard text={resources.MainPage.sidebar.address} onCopy={handleCopied}>
-              <Text mod="h4" className={cn(s.sidebar_item, s.sidebar_address)}>
+              <Text mod="h4" className={cn(s.sidebar_item)}>
                 {resources.MainPage.sidebar.address}
               </Text>
             </CopyToClipboard>
-            <Text mod="h4" weight="600" color="main" className={cn(s.sidebar_address)}>
+            <Text mod="h4" weight="600" color="main">
               {'Телефон'}
             </Text>
             <CopyToClipboard text={resources.MainPage.sidebar.phone} onCopy={handleCopied}>
-              <Text mod="h4" className={cn(s.sidebar_item, s.sidebar_phone)}>
+              <Text mod="h4" className={cn(s.sidebar_item)}>
                 {resources.MainPage.sidebar.phone}
               </Text>
             </CopyToClipboard>
-            <Text mod="h4" weight="600" color="main" className={cn(s.sidebar_address)}>
+            <Text mod="h4" weight="600" color="main">
               {'Email'}
             </Text>
             <CopyToClipboard text={resources.MainPage.sidebar.email} onCopy={handleCopied}>
-              <Text mod="h4" className={cn(s.sidebar_item, s.sidebar_email)}>
+              <Text mod="h4" className={cn(s.sidebar_item)}>
                 {resources.MainPage.sidebar.email}
               </Text>
             </CopyToClipboard>
-            <Text mod="h4" weight="600" color="main" className={cn(s.sidebar_address)}>
+            <Text mod="h4" weight="600" color="main">
               {'GitHub'}
             </Text>
             <a href={resources.MainPage.sidebar.github} target="_blank" rel="noopener noreferrer">
@@ -126,11 +126,11 @@ export const SummaryPage: React.FC = () => {
                 {resources.MainPage.sidebar.github.replace('https://', '')}
               </Text>
             </a>
-            <Text mod="h4" weight="600" color="main" className={cn(s.sidebar_address)}>
+            <Text mod="h4" weight="600" color="main">
               {'LinkedIn'}
             </Text>
             <a href={resources.MainPage.sidebar.linkedIn} target="_blank" rel="noopener noreferrer">
-              <Text mod="h4" className={cn(s.sidebar_item, s.linked_in)}>
+              <Text mod="h4" className={cn(s.sidebar_item)}>
                 {resources.MainPage.sidebar.linkedIn.replace('https://', '')}
               </Text>
             </a>

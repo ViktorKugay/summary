@@ -26,6 +26,10 @@
   &_right {
     text-align: right;
   }
+
+  &_justify {
+    text-align: justify;
+  }
 }
 
 .color {
@@ -34,11 +38,15 @@
   }
 
   &_black {
-    color: #4f4f4f;
+    color: #000000cc;
   }
 
   &_main {
     color: var(--primary-color);
+  }
+
+  &_blue {
+    color: #292961;
   }
 }
 
@@ -116,5 +124,15 @@
   &_p {
     font-size: 14px;
     line-height: 20px;
+  }
+}
+
+.margin {
+  &_normal {
+    margin-bottom: 16px;
+  }
+
+  &_dense {
+    margin-bottom: 8px;
   }
 }

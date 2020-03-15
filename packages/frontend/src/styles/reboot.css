@@ -157,7 +157,7 @@ sup {
 }
 
 a {
-  /* text-decoration: none; */
+  text-decoration: none;
   background-color: transparent;
   color: var(--primary-color);
   -webkit-text-decoration-skip: objects;

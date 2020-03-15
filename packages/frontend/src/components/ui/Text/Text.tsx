@@ -6,9 +6,9 @@ import s from './Text.css';
 
 interface Props {
   mod?: 'h1' | 'h2' | 'h3' | 'h4' | 'p';
-  color?: 'white' | 'black' | 'main';
+  color?: 'white' | 'black' | 'main' | 'blue';
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p';
-  align?: 'center' | 'left' | 'right';
+  align?: 'center' | 'left' | 'right' | 'justify';
   display?: 'block' | 'inline-block' | 'inline';
   fontFamily?: 'montserrat' | 'roboto';
   weight?: '200' | '300' | '400' | '500' | '600' | '700' | '800';
@@ -16,6 +16,7 @@ interface Props {
   isUppercase?: boolean;
   onClick?(event: any): any;
   className?: string;
+  margin?: 'normal' | 'dense';
 }
 
 export const Text: React.FC<Props> = ({
@@ -26,15 +27,17 @@ export const Text: React.FC<Props> = ({
   align = 'left',
   color = 'black',
   display = 'block',
-  fontFamily = 'montserrat',
-  weight = '200',
+  fontFamily = 'roboto',
+  weight = '400',
   whiteSpace = 'preWrap',
+  margin,
   isUppercase = false,
   onClick = noop,
 }) => {
   const Tag = tag;
   const classNames = cn(
     {
+      [s[`margin_${margin}`]]: margin,
       [s[`mod_${mod}`]]: mod,
       [s[`align_${align}`]]: align,
       [s[`color_${color}`]]: color,

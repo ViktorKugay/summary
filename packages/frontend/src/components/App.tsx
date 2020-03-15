@@ -1,6 +1,7 @@
 import React from 'react';
 import {SnackbarProvider} from 'notistack';
 import {Notifier} from './common/Notifier/Notifier';
+import {MainPage} from './pages/MainPage/MainPage';
 import {createStyles, makeStyles} from '@material-ui/core';
 import {SummaryPage} from './pages/SummaryPage/SummaryPage';
 import {NotifierProvider} from '../context/notifier/notifierProvider';
@@ -24,7 +25,8 @@ export default () => {
       <NotifierProvider>
         <Router>
           <Switch>
-            <Route exact path="/" component={SummaryPage} />
+            <Route exact path="/" component={MainPage} />
+            <Route exact path="/old" component={SummaryPage} />
           </Switch>
           <Notifier />
         </Router>

@@ -3,8 +3,7 @@
     "baseUrl": "./",
     "jsx": "react",
     "noImplicitAny": false,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true
+    "allowSyntheticDefaultImports": true
   },
   "extends": "../../tsconfig.json",
   "include": ["src/**/*.ts", "src/**/*.tsx"]
