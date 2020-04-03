@@ -1,11 +1,13 @@
 import React from 'react';
+import {theme} from '../theme/theme';
 import {SnackbarProvider} from 'notistack';
-import {Notifier} from './common/Notifier/Notifier';
 import {MainPage} from './pages/MainPage/MainPage';
-import {createStyles, makeStyles} from '@material-ui/core';
-import {SummaryPage} from './pages/SummaryPage/SummaryPage';
+import {PostPage} from './pages/PostPage/PostPage';
+import {Notifier} from './common/Notifier/Notifier';
 import {NotifierProvider} from '../context/notifier/notifierProvider';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {createStyles, makeStyles, ThemeProvider} from '@material-ui/core';
+import {Header} from './common/Header/Header';
 
 const useStyles: () => Record<string, string> = makeStyles(() =>
   createStyles({
@@ -17,20 +19,20 @@ export default () => {
   const classes = useStyles();
 
   return (
-    <SnackbarProvider
-      classes={{
-        variantInfo: classes.info,
-      }}
-    >
-      <NotifierProvider>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={MainPage} />
-            <Route exact path="/old" component={SummaryPage} />
-          </Switch>
-          <Notifier />
-        </Router>
-      </NotifierProvider>
-    </SnackbarProvider>
+    <ThemeProvider theme={theme}>
+      <SnackbarProvider classes={{variantInfo: classes.info}}>
+        <NotifierProvider>
+          <Router>
+            <Switch>
+              <Header>
+                <Route exact path="/" component={MainPage} />
+                <Route exact path="/post" component={PostPage} />
+              </Header>
+            </Switch>
+            <Notifier />
+          </Router>
+        </NotifierProvider>
+      </SnackbarProvider>
+    </ThemeProvider>
   );
 };

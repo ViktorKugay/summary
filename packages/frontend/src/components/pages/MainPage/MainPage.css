@@ -23,6 +23,7 @@
 
 .header_link {
   margin: 4px 0;
+  text-decoration: none;
 
   &:first-child {
     margin-left: 0;
@@ -68,6 +69,7 @@
 }
 
 .bio_link {
+  text-decoration: underline;
   color: #292961;
 }
 
@@ -94,7 +96,13 @@
 }
 
 .posts_container {
-  padding: 32px 0;
+  padding: 32px 24px;
+  align-items: stretch;
+
+  @media (min-width: 900px) {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 .all_posts_link {
@@ -109,6 +117,7 @@
 }
 
 .packages_background {
+  max-width: 100%;
   background: linear-gradient(135deg, rgb(252, 207, 49) 10%, rgb(245, 85, 85) 100%);
 }
 
@@ -160,5 +169,23 @@
   @media (min-width: 900px) {
     /* stylelint-disable-next-line */
     display: block !important;
+  }
+}
+
+.newsletter_divider {
+  margin-top: 88px;
+  margin-bottom: 48px;
+}
+
+.newsletter_container {
+  margin-bottom: 0;
+  padding-right: 24px;
+  padding-left: 24px;
+  padding-bottom: 64px;
+  max-width: 500px;
+
+  @media (min-width: 900px) {
+    padding-right: 0;
+    padding-left: 0;
   }
 }

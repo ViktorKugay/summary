@@ -2,6 +2,7 @@ import React, {useRef} from 'react';
 import cn from 'classnames';
 import {Text} from '../../ui/Text/Text';
 import anime from 'animejs/lib/anime.js';
+import {Link} from 'react-router-dom';
 
 import s from './PostCard.css';
 
@@ -45,10 +46,16 @@ export const PostCard: React.FC<Props> = ({
   };
 
   return (
-    <div ref={container} className={classNames} onMouseEnter={handleOver} onMouseLeave={handleDown} id="titles">
+    <Link
+      className={cn(s.link, classNames)}
+      ref={container}
+      onMouseEnter={handleOver}
+      onMouseLeave={handleDown}
+      to="/post"
+    >
       {image && <img className={s.image} src={image} alt="alt" />}
       <div className={cn(s[`text_container_${mod}`])}>
-        <Text mod="h2" margin="normal" align="justify">
+        <Text mod="h3" margin="normal" align={mod === 'large' ? 'left' : 'center'}>
           {title}
         </Text>
         {isLargeMod && (
@@ -57,6 +64,6 @@ export const PostCard: React.FC<Props> = ({
           </Text>
         )}
       </div>
-    </div>
+    </Link>
   );
 };
