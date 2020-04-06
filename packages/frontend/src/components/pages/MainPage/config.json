@@ -27,7 +27,10 @@
       "facebook": "https://www.facebook.com/profile.php?id=100006525159439"
     },
     "main": {
-      "bio": "TypeScript full stack engineer. Infrastructure improvement, backend, frontend development. TypeScript, React, Redux, Express, Nestjs, PostgreSql and a lot of other efficient features. Learn more\u00A0",
+      "bio": {
+        "description": "TypeScript full stack engineer. Infrastructure improvement, backend, frontend development. TypeScript, React, Redux, Express, Nestjs, PostgreSql and a lot of other efficient features. Learn more\u00A0",
+        "logo": "https://sun1-19.userapi.com/Z9C_DoWq1vECJdcIQmPqOndRyuIk-m8TYbEamg/BPpxXBCgOlA.jpg"
+      },
       "latest": {
         "title": "Latest Post"
       },
