@@ -11,6 +11,10 @@ const contentDirPath = path.resolve('content');
 
 main();
 
+const dir = '/opt/build/repo/packages/frontend/src/components/common/Socials';
+
+console.log(readdirSync(dir));
+
 function main() {
   const articlesDirMap = readdirSync(contentDirPath);
 
