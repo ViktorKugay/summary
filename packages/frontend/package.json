@@ -13,7 +13,5 @@
     "format:json": "prettier --write \"src/**/*.json\"",
     "format:css": "prettier --write \"src/components/**/*.css\" && stylelint --fix \"src/components/**/*.css\" --config ../../.stylelintrc-format",
     "test": "jest --passWithNoTests"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+  }
 }

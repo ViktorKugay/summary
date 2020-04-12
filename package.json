@@ -5,7 +5,7 @@
   "scripts": {
     "start:dev:frontend": "yarn workspace frontend start:dev",
     "start:dev:backend": "yarn workspace backend start:dev",
-    "build": "yarn build:content && yarn build:frontend",
+    "build": "yarn build:content && yarn build:frontend yarn build:backend",
     "build:content": "node scripts/buildContent.js",
     "build:frontend": "yarn workspace frontend build",
     "build:backend": "yarn workspace backend build",
@@ -80,9 +80,7 @@
     "regenerator-runtime": "0.13.3",
     "showdown": "1.9.1",
     "slick-carousel": "1.8.1",
-    "smoothscroll": "0.4.0"
-  },
-  "devDependencies": {
+    "smoothscroll": "0.4.0",
     "@babel/core": "7.7.2",
     "@babel/preset-typescript": "7.7.2",
     "@testing-library/react": "8.0.1",
