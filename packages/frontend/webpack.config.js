@@ -2,7 +2,12 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
 const path = require('path');
+
+const contentPath = path.resolve('..', '..', 'content.json');
+
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 const postcssLoader = {
   loader: require.resolve('postcss-loader'),
@@ -24,15 +29,15 @@ const postcssLoader = {
 };
 
 module.exports = {
-  entry: './packages/frontend/src/index.ts',
-  mode: 'production',
+  entry: './src/index.ts',
+  mode: NODE_ENV,
   devtool: false,
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '..', '..', 'dist'),
   },
   devServer: {
     historyApiFallback: true,
@@ -71,6 +76,11 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        __env__: JSON.stringify(require(contentPath)),
+      },
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),

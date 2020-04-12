@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "jsx": "react",
-    "noImplicitAny": false,
-    "allowSyntheticDefaultImports": true
+    "jsx": "react"
   },
   "extends": "../../tsconfig.json",
   "include": ["src/**/*.ts", "src/**/*.tsx"]

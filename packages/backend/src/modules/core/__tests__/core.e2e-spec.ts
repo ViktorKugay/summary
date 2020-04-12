@@ -11,5 +11,9 @@ afterAll(() => {
 });
 
 describe('CoreModule (e2e)', () => {
-  test('GET /status', async () => {});
+  test('get success healthcheck', async () => {
+    const validHealthcheckResponse = await ctx.agent.get('/status');
+    expect(validHealthcheckResponse.status).toBe(200);
+    expect(validHealthcheckResponse.body.status).toBe('success');
+  });
 });

@@ -1,13 +1,13 @@
 import React from 'react';
 import {theme} from '../theme/theme';
 import {SnackbarProvider} from 'notistack';
+import {Header} from './common/Header/Header';
 import {MainPage} from './pages/MainPage/MainPage';
-import {PostPage} from './pages/PostPage/PostPage';
 import {Notifier} from './common/Notifier/Notifier';
+import {ArticlePage} from './pages/ArticlePage/ArticlePage';
 import {NotifierProvider} from '../context/notifier/notifierProvider';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {createStyles, makeStyles, ThemeProvider} from '@material-ui/core';
-import {Header} from './common/Header/Header';
 
 const useStyles: () => Record<string, string> = makeStyles(() =>
   createStyles({
@@ -26,7 +26,7 @@ export default () => {
             <Switch>
               <Header>
                 <Route exact path="/" component={MainPage} />
-                <Route exact path="/post" component={PostPage} />
+                <Route exact path="/post" component={ArticlePage} />
               </Header>
             </Switch>
             <Notifier />

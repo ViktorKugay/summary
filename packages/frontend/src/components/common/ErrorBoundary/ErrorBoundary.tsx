@@ -7,7 +7,7 @@ interface ErrorBoundaryState {
 export class ErrorBoundary extends React.Component<{}, ErrorBoundaryState> {
   state = {error: null};
 
-  componentDidCatch(error) {
+  componentDidCatch(error: Error) {
     this.setState({error});
   }
 

@@ -1,8 +1,8 @@
+import {Text} from '../../ui/Text/Text';
+import {Link} from 'react-router-dom';
 import React, {useRef} from 'react';
 import cn from 'classnames';
-import {Text} from '../../ui/Text/Text';
-import anime from 'animejs/lib/anime.js';
-import {Link} from 'react-router-dom';
+import anime from 'animejs';
 
 import s from './PostCard.css';
 
@@ -27,7 +27,7 @@ export const PostCard: React.FC<Props> = ({
 
   const isLargeMod = mod === 'large';
 
-  const container = useRef();
+  const container = useRef() as any;
 
   const handleOver = () => {
     anime({

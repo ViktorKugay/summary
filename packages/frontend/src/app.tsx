@@ -13,7 +13,7 @@ import './styles/reboot.css';
 
 const rootEl = document.getElementById('root');
 
-const render = Component => {
+const render = (Component: React.FC) => {
   ReactDOM.render(
     <AppContainer>
       <ErrorBoundary>

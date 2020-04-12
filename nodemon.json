@@ -1,6 +1,0 @@
-{
-  "watch": ["packages"],
-  "ext": "ts",
-  "ignore": ["packages/*/src/**/*.spec.ts"],
-  "exec": "ts-node --files packages/backend/src/main.ts | pino-pretty -c -l"
-}

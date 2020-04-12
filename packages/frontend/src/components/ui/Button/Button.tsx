@@ -5,7 +5,7 @@ import s from './Button.css';
 
 interface Props {
   className?: string;
-  onClick?(evet): void;
+  onClick?(evet: any): void;
   color: 'purple';
   fullWidth?: boolean;
 }

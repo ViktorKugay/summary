@@ -1,12 +1,12 @@
+import {CoreStatusResponse} from './dto/core-status.dto';
 import {Controller, Get} from '@nestjs/common';
-import {CoreService} from './core.service';
+import {ApiOperation} from '@nestjs/swagger';
 
-@Controller('/')
+@Controller()
 export class CoreController {
-  constructor(private readonly coreService: CoreService) {}
-
-  @Get('*')
-  serveIndexHtml() {
-    return this.coreService.serveIndexHtml();
+  @Get('/status')
+  @ApiOperation({operationId: 'status', summary: 'status'})
+  status(): CoreStatusResponse {
+    return {status: 'success'};
   }
 }

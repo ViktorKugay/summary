@@ -1,7 +1,7 @@
-import React, {useRef} from 'react';
-import {Text} from '../../ui/Text/Text';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import anime from 'animejs/lib/anime.js';
+import {Text} from '../../ui/Text/Text';
+import React, {useRef} from 'react';
+import anime from 'animejs';
 
 import s from './PackageCard.css';
 
@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const PackageCard: React.FC<Props> = ({title, description, color}) => {
-  const container = useRef();
+  const container = useRef() as any;
 
   const handleOver = () => {
     anime({

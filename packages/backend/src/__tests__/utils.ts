@@ -1,12 +1,12 @@
-import {INestApplication} from '@nestjs/common';
 import {Test, TestingModule} from '@nestjs/testing';
-import request from 'supertest';
-import {AppModule} from '../app.module';
+import {INestApplication} from '@nestjs/common';
+import request from 'supertest/lib/agent';
 import {addMiddlewares} from '../server';
+import {AppModule} from '../app.module';
 
 export type TestCtx = {
   app: INestApplication;
-  agent: request.SuperTest<request.Test>;
+  agent: any;
 };
 
 export async function setup(): Promise<TestCtx> {

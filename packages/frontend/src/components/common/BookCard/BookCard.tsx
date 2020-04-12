@@ -1,9 +1,9 @@
-import React, {useRef} from 'react';
-import cn from 'classnames';
+import InfoIcon from '@material-ui/icons/Info';
 import {Text} from '../../ui/Text/Text';
 import {Link} from 'react-router-dom';
-import InfoIcon from '@material-ui/icons/Info';
-import anime from 'animejs/lib/anime.js';
+import React, {useRef} from 'react';
+import cn from 'classnames';
+import anime from 'animejs';
 
 import s from './BookCard.css';
 
@@ -18,9 +18,9 @@ interface Props {
 }
 
 export const BookCard: React.FC<Props> = ({image, title, author, href, points, logo, color = 'orange'}) => {
-  const icon = useRef();
+  const icon = useRef() as any;
 
-  const container = useRef();
+  const container = useRef() as any;
 
   const handleOver = () => {
     anime({

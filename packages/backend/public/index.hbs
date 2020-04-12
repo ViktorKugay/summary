@@ -1,5 +1,4 @@
-export const buildIndexHtml = ({env, bundle}: {env: any; bundle: string}) => {
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
@@ -25,16 +24,14 @@ export const buildIndexHtml = ({env, bundle}: {env: any; bundle: string}) => {
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
-        <script>
-            window.__env__ = ${JSON.stringify(env)};
+        <script type="text/javascript">
+            window.__env__ = {{{env}}}
         </script>
       </head>
       <body>
         <div id="root"></div>
-        <script>
-            ${bundle}
+        <script type="text/javascript">
+            {{{bundle}}}
         </script>
       </body>
     </html>
-    `;
-};

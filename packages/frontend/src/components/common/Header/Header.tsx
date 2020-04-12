@@ -1,15 +1,17 @@
-import React from 'react';
 import {Container} from '../../ui/Container/Container';
 import {Text} from '../../ui/Text/Text';
-import smoothScroll from 'smoothscroll';
 import {Link} from 'react-router-dom';
+import React, {MouseEvent} from 'react';
+
+// @ts-ignore
+import smoothScroll from 'smoothscroll';
 
 import s from './Header.css';
 
 import c from './config.json';
 
 export const Header: React.FC = ({children}) => {
-  const handleLinkClick = href => event => {
+  const handleLinkClick = (href: string) => (event: any) => {
     if (href[0] === '#') {
       event.preventDefault();
       const scrollTo = document.querySelector(href);

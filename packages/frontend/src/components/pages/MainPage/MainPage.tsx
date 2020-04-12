@@ -1,26 +1,23 @@
 import Slider from 'react-slick';
 import React, {useRef} from 'react';
-// import {Link} from 'react-router-dom';
 import {Logo} from '../../ui/Logo/Logo';
 import {Text} from '../../ui/Text/Text';
 import {Divider} from '../../ui/Divider/Divider';
 import {Container} from '../../ui/Container/Container';
 import {PostCard} from '../../common/PostCard/PostCard';
 import {BookCard} from '../../common/BookCard/BookCard';
-// import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import {SubscribeForm} from '../../common/SubscribeForm/SubscribeForm';
+import {getArticlesFromProcessEnv} from '../../../utils/getArticlesFromProcessEnv';
 import {PackageCard} from '../../common/PackageCard/PackageCard';
 import {Socials} from '../../common/Socials/Socials';
-
 import {Arrow} from '../../common/Arrow/Arrow';
+import {Article} from '../../../types/types';
 
 import s from './MainPage.css';
 
 import c from './config.json';
 
-console.log(window.__env__, '!!!!');
-
-const {posts} = window.__env__;
+const articles = getArticlesFromProcessEnv();
 
 const settings = {
   dots: true,
@@ -33,7 +30,7 @@ const settings = {
 };
 
 export const MainPage: React.FC = () => {
-  const slider = useRef();
+  const slider = useRef() as any;
 
   return (
     <>
@@ -54,9 +51,9 @@ export const MainPage: React.FC = () => {
         </Text>
         <PostCard
           mod="large"
-          image={posts[0].attributes.image}
-          title={posts[0].attributes.title}
-          description={posts[0].attributes.description}
+          image={articles[0].attributes.image}
+          title={articles[0].attributes.title}
+          description={articles[0].attributes.description}
         />
       </Container>
 
@@ -65,19 +62,19 @@ export const MainPage: React.FC = () => {
       </Container>
 
       <Container wrap="wrap" justify="space-between" className={s.posts_container}>
-        {posts.map((post, index) => (
+        {articles.map((article: Article, index) => (
           <PostCard
             mod="small"
             key={index}
             margin="normal"
-            image={post.attributes.image}
-            title={post.attributes.title}
-            description={post.attributes.description}
+            image={article.attributes.image}
+            title={article.attributes.title}
+            description={article.attributes.description}
           />
         ))}
 
-        {/* <Link className={s.all_posts_link} to="/posts">
-            <Text>{c.MainPage.main.posts.title}</Text>
+        {/* <Link className={s.all_posts_link} to="/articles">
+            <Text>{c.MainPage.main.articles.title}</Text>
             <ArrowForwardIcon />
           </Link> */}
       </Container>

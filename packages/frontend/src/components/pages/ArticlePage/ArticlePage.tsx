@@ -1,19 +1,19 @@
-import React, {useEffect} from 'react';
-import {useLocation} from 'react-router';
-// import post from '../../../../../../content/dist/posts/post5.json';
-import smoothScroll from 'smoothscroll';
-import Prism from 'prismjs';
-import {Container} from '../../ui/Container/Container';
+import {getArticlesFromProcessEnv} from '../../../utils/getArticlesFromProcessEnv';
 import {SubscribeForm} from '../../common/SubscribeForm/SubscribeForm';
+import {Container} from '../../ui/Container/Container';
 import {Socials} from '../../common/Socials/Socials';
+import {useLocation} from 'react-router';
+import React, {useEffect} from 'react';
+import Prism from 'prismjs';
 
-import s from './PostPage.css';
+// @ts-ignore
+import smoothScroll from 'smoothscroll';
 
-console.log(window, '!!');
+import s from './ArticlePage.css';
 
-const {posts} = window.__env__;
+const articles = getArticlesFromProcessEnv();
 
-const post = posts[0];
+const article = articles[0];
 
 const createMarkup = (html: string) => {
   return {__html: html};
@@ -27,7 +27,7 @@ const scrollToArticle = () => {
   }
 };
 
-export const PostPage: React.FC = () => {
+export const ArticlePage: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
@@ -39,10 +39,10 @@ export const PostPage: React.FC = () => {
   return (
     <>
       <div id="article" className={s.container}>
-        <h1>{post.attributes.title}</h1>
-        <h2>{post.attributes.description}</h2>
-        <img src={post.attributes.image} className={s.image} alt="post_image" />
-        <div dangerouslySetInnerHTML={createMarkup(post.html)} />
+        <h1>{article.attributes.title}</h1>
+        <h2>{article.attributes.description}</h2>
+        <img src={article.attributes.image} className={s.image} alt="post_image" />
+        <div dangerouslySetInnerHTML={createMarkup(article.html)} />
       </div>
       <Container wrap="wrap" justify="space-between" align="start" className={s.newsletter_container} id="newsletter">
         <SubscribeForm />
