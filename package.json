@@ -12,7 +12,7 @@
     "test": "run-p test:*",
     "test:frontend": "echo no test",
     "test:backend": "yarn workspace backend test",
-    "test:backend:e2e": "yarn workworkspacespaces backend test:e2e",
+    "test:backend:e2e": "yarn workspace backend test:e2e",
     "typecheck": "run-p typecheck:*",
     "typecheck:frontend": "yarn workspace frontend typecheck",
     "typecheck:backend": "yarn workspace backend typecheck",
@@ -80,7 +80,9 @@
     "regenerator-runtime": "0.13.3",
     "showdown": "1.9.1",
     "slick-carousel": "1.8.1",
-    "smoothscroll": "0.4.0",
+    "smoothscroll": "0.4.0"
+  },
+  "devDependencies": {
     "@babel/core": "7.7.2",
     "@babel/preset-typescript": "7.7.2",
     "@testing-library/react": "8.0.1",
