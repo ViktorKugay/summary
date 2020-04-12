@@ -5,7 +5,7 @@
   "scripts": {
     "start:dev:frontend": "yarn workspace frontend start:dev",
     "start:dev:backend": "yarn workspace backend start:dev",
-    "build": "yarn build:content && yarn build:frontend yarn build:backend",
+    "build": "yarn build:content && yarn build:frontend",
     "build:content": "node scripts/buildContent.js",
     "build:frontend": "yarn workspace frontend build",
     "build:backend": "yarn workspace backend build",
